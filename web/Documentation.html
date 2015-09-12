@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Documentation</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    </head>
+    
+    <body>
+        
+        <div class="container">
+            
+            <div class="jumbotron">
+                <h1>CA1 - Documentation</h1>
+            </div>
+            
+            <div class ="row">
+                
+                <div class="col-sm-10">
+                    <fieldset>
+                    <h3><strong>Design</strong></h3>
+                    <br>
+                    
+                    <h4>TCP - Transmission Control Protocol</h4>
+                    <p>In our application, we have used the Transmission Control Protocol. This protocol is used to 
+                       initiate af "Point-to-Point" client-server connection. </p>
+                    <ul>
+                        <li><p>TCP is a "reliable" protocol, in other words, it guarantees the delivery of the data
+                            it transmits in the form of "packets."</p></li>
+                        <li><p>If packets are lost or damaged, TCP will resend the data until it verifies that packets
+                            have been successfully transmitted.</p></li>
+                        <li><p>TCP is needed for applications that must reliably send messages back and forth or initiate
+                            file transfers to ensure that a perfect copy of the data arrives at the other sides uncorrupted.</p></li>
+                    </ul>
+                    <br>
+                    
+                    <h4>TCP/IP Sockets</h4>
+                    <p>When establishing connectivity, the client and server each bind a "socket" to their end of the connection.
+                       Once a connection has been established the client and server both read from and write to the "socket"
+                       when communicating.</p>
+                    <br>
+                    
+                    <h4>Client-Server Application</h4>
+                    <ol>
+                        <li><p>Create a Socket or ServerSocket object and open it over a specified "port" and "ip" 
+                            address or host name. Example - "localhost", 9090</p></li>
+                        <li><p>Instantiate "InputStreamReader, BufferedReader and PrintStream" objects to stram 
+                            data to and from each socket.</p></li>
+                        <li><p>Read from and write to the stream between the sockets using their agreed-upon protocol.</p></li>
+                        <li><p>Close the input and output streams</p></li>
+                        <li><p>Close the Sockets or ServerSocket objects.</p></li>
+                    </ol>
+                    <br>
+                    
+                    <h4>State Behaviour</h4>
+                    <p>The "Server" created a ServerSocket object and open it over a specified "port" and "ip" 
+                                address or host name, in our case "localhost", 9090. The client creates a socket, and once
+                            a connection between the sockets has been established, the client and server both read from and 
+                            write to the socket. The Server calls the "accept()" method and create a new Thread for the client.
+                            When using "Terminal" on Mac or "Command Prompt" on Windows, the first thing you have to do is 
+                            use a protocol tag - "USER#name", to create a user. Once a user has been created, the "USERLIST#"
+                            will be available with all online/connected users. All online/connected clients will receive the
+                            list. Communication between the clients, is done through the agreed upon procotol - "MSG#receiver#msg".
+                            The connection is stopped, when calling the "STOP#" protocol</p>
+                    <br>
+                    
+                    <h4>Observer Design Pattern</h4>
+                    <p>We have implemented the Observer design pattern. The Observer design pattern define a one-to-many
+                    dependency between objects so that when one object changes state, all its dependents are notified
+                    and updated automatically. Observer design pattern falls under "behavioral pattern" category.
+                    The "ChatGUI" class implements observer, with the abstract method "update()" implemented. The 
+                    "Client" class extends "Observable", and everytime we receive a message, the "notfiy()" method is 
+                    called. The "notify()" method notifies all the observers. </p>
+                    
+                </div>
+                
+                <div class="col-sm-10">
+                    <h3><strong>Who did what?</strong></h3>
+
+                    <ul>
+                        <li><p><strong>Client.java</strong> - Can & Mustafa</p></li>
+                        <li><p><strong>ClientManager.java</strong> - Can & Mustafa</p></li>
+                        <li><p><strong>ChatGUI.java</strong> - Can</p></li>
+                        <li><p><strong>Protocol.java</strong> - Mustafa</p></li>
+                        <li><p><strong>Server.java</strong> - Can & Mustafa</p></li>
+                        <li><p><strong>ClientTest.java</strong> - Can</p></li>
+                        <li><p><strong>Utils.java</strong> - Mustafa</p></li>
+                        <li><p><strong>Main.html</strong> - Can</p></li>
+                        <li><p><strong>Documentation.html</strong> - Mustafa</p></li>
+                        <li><p><strong>Application.html</strong> - Can</p></li>
+                    </ul>
+                </div>
+                
+                <div class="col-sm-10">
+                    <h3><strong>GitHub</strong></h3>
+                    <a href="https://github.com/HakimiX/CA1---Final">Github</a>
+                </div>
+                
+                
+            </div>
+            
+        </div>
+        
+    </body>
+</html>
